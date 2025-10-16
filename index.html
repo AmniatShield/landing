@@ -13,7 +13,15 @@
   </head>
   <body>
     <header>
-      <h1>امنیت شیلد</h1>
+      <div class="header-content">
+        <h1>سندباکس تحلیل بدافزار امنیت شیلد</h1>
+        <p class="subtitle">
+          ابزاری قدرتمند و امن برای بررسی و تحلیل بدافزارها در محیط ایزوله
+        </p>
+        <a href="#explain" class="cta-button">سندباکس چیست؟</a>
+        <p></p>
+        <a href="#features" class="cta-button">کاوش ویژگی‌ها</a>
+      </div>
     </header>
 
     <section class="teaser">
@@ -23,8 +31,40 @@
         مرورگر شما از ویدیو پشتیبانی نمی‌کند.
       </video>
     </section>
+    <section class="sandbox-explain" id="explain">
+      <h2>سندباکس چیست؟</h2>
+      <p>
+        سندباکس یک محیط ایزوله و امن است که در آن می‌توان کدهای مشکوک یا
+        بدافزارها را بدون تأثیر بر سیستم اصلی اجرا کرد.
+      </p>
+      <p>
+        این ابزار در تحلیل بدافزارها برای مشاهده رفتار، شناسایی تهدیدها و
+        استخراج اطلاعات مفید استفاده می‌شود.
+      </p>
+      <p>
+        سندباکس ما با ویژگی‌های پیشرفته، تحلیل دقیق و گزارش‌گیری حرفه‌ای را
+        ارائه می‌دهد تا امنیت شما را تضمین کند.
+      </p>
+      <p>
+        با استفاده از سندباکس، می‌توانید بدون ریسک، بدافزارها را بررسی و درک
+        بهتری از تهدیدات سایبری به دست آورید.
+      </p>
+    </section>
 
-    <section class="features">
+    <section class="how-it-works">
+      <h2>چگونه سندباکس ما کار می‌کند؟</h2>
+      <ol>
+        <li>گام اول: آپلود فایل مشکوک به سندباکس.</li>
+        <li>گام دوم: ایزوله‌سازی و اجرای فایل در محیط امن.</li>
+        <li>گام سوم: نظارت و ثبت رفتار بدافزار.</li>
+        <li>
+          گام چهارم: تولید گزارش تحلیل و پیشنهادات امنیتی توسط هوش مصنوعی
+          پیشرفته.
+        </li>
+      </ol>
+    </section>
+
+    <section class="features" id="features">
       <div class="feature-box">
         <i class="fas fa-globe"></i>
         <h3>ابری</h3>
@@ -62,7 +102,19 @@
     </footer>
 
     <script>
-      // JavaScript for any future interactivity, currently empty
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
     </script>
   </body>
 </html>
