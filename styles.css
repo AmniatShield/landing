@@ -1,0 +1,340 @@
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("media/Vazirmatn-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BTitr";
+  src: url("media/BTitrBd.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #1e88e5; /* Blue */
+  --secondary-color: #43a047; /* Green */
+  --accent-color: #fb8c00; /* Orange */
+  --neutral-dark: #424242; /* Dark Gray */
+  --neutral-light: #f5f5f5; /* Light Gray */
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Vazirmatn", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, var(--neutral-light), var(--white));
+  color: var(--neutral-dark);
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+}
+
+header {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--white);
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: headerGlow 5s infinite alternate;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  animation: pulse 10s infinite;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3em;
+  font-family: "BTitr", sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.teaser {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1200px;
+  border-radius: 16px;
+  animation: slideIn 1s ease-out;
+}
+
+.teaser h2 {
+  font-family: "BTitr", sans-serif;
+  color: var(--primary-color);
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.teaser video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease;
+}
+
+.teaser video:hover {
+  transform: scale(1.02);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-box {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.feature-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.5));
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.feature-box:hover::before {
+  transform: translateX(100%);
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-box i {
+  font-size: 4em;
+  margin-bottom: 20px;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.feature-box:nth-child(4n + 1) i {
+  color: var(--primary-color);
+}
+
+.feature-box:nth-child(4n + 2) i {
+  color: var(--secondary-color);
+}
+
+.feature-box:nth-child(4n + 3) i {
+  color: var(--accent-color);
+}
+
+.feature-box:nth-child(4n + 4) i {
+  color: var(--primary-color);
+}
+
+.feature-box:hover i {
+  transform: rotate(360deg);
+}
+
+.feature-box h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  font-family: "BTitr", sans-serif;
+  color: var(--neutral-dark);
+}
+
+.feature-box p {
+  font-size: 1em;
+  color: #757575;
+}
+
+footer {
+  background: linear-gradient(
+    135deg,
+    var(--neutral-dark),
+    var(--primary-color)
+  );
+  color: var(--white);
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  animation: pulse 12s infinite;
+}
+
+footer h2 {
+  font-family: "BTitr", sans-serif;
+  font-size: 2em;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.people {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.person {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  width: 220px;
+  transition: transform 0.4s ease, background 0.4s ease;
+  backdrop-filter: blur(5px);
+}
+
+.person:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.person i {
+  font-size: 3em;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+
+.person h3 {
+  font-family: "BTitr", sans-serif;
+  font-size: 1.4em;
+}
+
+.person p {
+  font-size: 1em;
+}
+
+@keyframes headerGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(30, 136, 229, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(67, 160, 71, 0.7);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-box:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.feature-box:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.feature-box:nth-child(3) {
+  animation-delay: 0.9s;
+}
+.feature-box:nth-child(4) {
+  animation-delay: 1.2s;
+}
+.feature-box:nth-child(5) {
+  animation-delay: 1.5s;
+}
+.feature-box:nth-child(6) {
+  animation-delay: 1.8s;
+}
+.feature-box:nth-child(7) {
+  animation-delay: 2.1s;
+}
+.feature-box:nth-child(8) {
+  animation-delay: 2.4s;
+}
+
+@media (max-width: 1024px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+  header h1 {
+    font-size: 2.2em;
+  }
+  .teaser {
+    padding: 40px 10px;
+  }
+  .person {
+    width: 100%;
+    max-width: 300px;
+  }
+}
